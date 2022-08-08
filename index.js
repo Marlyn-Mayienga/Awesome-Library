@@ -28,7 +28,6 @@ class BookCollection {
     });
   }
 
-  // Display book dynamically
   display=(data) => {
     if (this) {
       const div = document.createElement('div');
@@ -40,7 +39,6 @@ class BookCollection {
     }
   }
 
-  // Saving To storage
   saveToLocalStorage =() => {
     localStorage.setItem('addBook', JSON.stringify({ bookColl: this.books }));
   }
@@ -63,12 +61,9 @@ if (localStorage.getItem('addBook')) {
 }
 
 form.addEventListener('submit', (e) => {
-  // prevents default behaviour of the form of submitting
   e.preventDefault();
   collect.add(new Book(inputTitle.value, inputAuthor.value));
 });
-
-// -----Navbar functionality-----//
 
 const aBookList = document.querySelector('#book-list');
 const aAddBook = document.querySelector('#add-book');
