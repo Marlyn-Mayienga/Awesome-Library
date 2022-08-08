@@ -1,5 +1,3 @@
-/* eslint max-classes-per-file: ["error", 2] */
-
 import Book from './modules/book.js';
 import getTime from './modules/day-time.js';
 
@@ -8,13 +6,11 @@ const inputAuthor = document.getElementById('author');
 const form = document.getElementById('book-form');
 const bookSection = document.querySelector('.library');
 
-// Array of books
 class BookCollection {
   constructor(books = []) {
     this.books = books;
   }
 
-  // Add a book
   add =(addBook) => {
     this.books.push(addBook);
     this.display(addBook);
@@ -24,7 +20,6 @@ class BookCollection {
     inputTitle.value = '';
   }
 
-  // Remove a book
   remove =() => {
     const removeBtn = document.querySelectorAll('.remove-book');
     removeBtn[removeBtn.length - 1].addEventListener('click', (e) => {
