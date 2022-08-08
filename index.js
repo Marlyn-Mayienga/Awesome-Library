@@ -17,24 +17,24 @@ class BookCollection {
   // Add a book
   add =(addBook) => {
     this.books.push(addBook);
-    display(addBook);
-    remove();
-    saveToLocalStorage();
+    this.display(addBook);
+    this.remove();
+    this.saveToLocalStorage();
     inputAuthor.value = '';
     inputTitle.value = '';
   }
 
   // Remove a book
-  remove =()  => {
+  remove =() => {
     const removeBtn = document.querySelectorAll('.remove-book');
     removeBtn[removeBtn.length - 1].addEventListener('click', (e) => {
-      removeFromCollection(e.target);
+      this.removeFromCollection(e.target);
       bookSection.removeChild(e.target.parentNode);
     });
   }
 
   // Display book dynamically
-  display=(data)=> {
+  display=(data) => {
     if (this) {
       const div = document.createElement('div');
       div.classList.add('book-collection', 'bookdiv');
@@ -45,7 +45,7 @@ class BookCollection {
     }
   }
 
-  removeFromCollection =(data) =>{
+  removeFromCollection =(data) => {
     const arr = data.getAttribute('data-value').split('-');
     this.books = this.books.filter(
       (item) => item.title + item.author !== arr[0] + arr[1],
@@ -54,7 +54,7 @@ class BookCollection {
   }
 
   // Saving To storage
-  saveToLocalStorage =()=> {
+  saveToLocalStorage =() => {
     localStorage.setItem('addBook', JSON.stringify({ bookColl: this.books }));
   }
 }
@@ -106,7 +106,7 @@ aContact.addEventListener('click', () => {
 showSection('new-book-section');
 
 const init = () => {
-    getTime();
+  getTime();
 };
-  
+
 init();

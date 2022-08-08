@@ -1,4 +1,3 @@
-
 let getTime;
 
 export default getTime = () => {
