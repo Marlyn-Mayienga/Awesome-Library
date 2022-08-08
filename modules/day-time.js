@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 let getTime;
 
 export default getTime = () => {
